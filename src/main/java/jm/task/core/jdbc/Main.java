@@ -3,6 +3,7 @@ package jm.task.core.jdbc;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
+import jm.task.core.jdbc.util.Util;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class Main {
         userService.saveUser("Петя", "Петров", (byte) 21);
         userService.saveUser("Ваня", "Ванов", (byte) 15);
         userService.saveUser("Катя", "Алешкина", (byte) 18);
-
+//
         List<User> aaa = userService.getAllUsers();
         for (User i : aaa) {
             System.out.println(i);
@@ -33,5 +34,6 @@ public class Main {
 //        userService.removeUserById(1);
 //        System.out.println("Кто от удален");
 
+        Util.closeSessionFactory();
     }
 }
